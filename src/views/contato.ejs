@@ -1,0 +1,40 @@
+<%- include('includes/head') %>
+    <%- include('includes/nav') %>
+
+
+        <%- include('messages') %>
+            <div class="container">
+                <h1>Seus contatos</h1>
+                <table>
+                    <thead>
+                        <tr>
+                            <td>Nome</td>
+                            <td>sobrenome</td>
+                            <td>telefone</td>
+                            <td>Email</td>
+                        </tr>
+                        <thead>
+                            <% if(contatos.length> 0) { %>
+
+                                <tbody>
+                                    <% contatos.forEach(function(contato){ %>
+                                        <tr>
+                                            <td><%= contato.nome %></td>
+                                            <td><%= contato.sobrenome %></td>
+                                            <td><%= contato.telefone %></td>
+                                            <td><%= contato.email %></td>
+                                            <td><a href="/contatos/edit/<%= contato._id %>">EDITAR</a></td>
+                                            <td><a href="/contatos/delete/<%= contato._id %>">DELETE</a></td>
+
+                                        </tr>
+
+
+                                    <% } ) %>
+
+                                </tbody>
+
+                                <% } %>
+                </table>
+            </div>
+
+            <%- include('includes/footer') %>

@@ -1,0 +1,24 @@
+<nav class="col">
+    <a href="/" class="link">Agenda</a>
+    <div class="col">
+        <ul class="col">
+            <li>
+                <a href="/contatos/index" class="link">Seus contatos</a>
+            </li>
+            <% if(user) { %>
+                <li>
+                    <a href="/contatos/register" class="link">Cadastrar Contatos</a>
+                </li>
+            <li>
+                <a href="/login/logout" class="link">Sair</a>
+            </li>
+            <% } else { %>
+                <li>
+                    <a href="/login/index" class="link">Entrar</a>
+                </li>
+
+                <% } %>
+           
+        </ul>
+    </div>
+</nav>

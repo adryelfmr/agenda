@@ -1,0 +1,35 @@
+<%- include('includes/head') %>
+<%- include('includes/nav') %>   
+
+<%- include('messages') %>
+<div class="container">
+    <h1>Adicione um contato</h1>
+    <form action="/contatos/edit/edit/<%= contato._id %>" method="POST">
+        <input type="hidden" name="_csrf" value=<%=csrfToken %>>
+        <div>
+            <p>Nome</p>
+            <input value="<%= contato.nome %>" type="text" name="nome">
+        </div>
+        <div>
+            <p>Sobrenome</p>
+            <input value="<%= contato.sobrenome %>" type="text" name="sobrenome">
+        </div>
+        <div>
+            <p>Telefone</p>
+            <input value="<%= contato.telefone %>" type="tel" name="telefone">
+        </div>
+        <div>
+            <p>Email</p>
+            <input value="<%= contato.email %>" type="email" name="email">
+        </div>
+        
+
+            <button type="submit">Editar</button>
+        
+
+
+    </form>
+</div>
+
+
+<%- include('includes/footer') %>
